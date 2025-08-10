@@ -358,7 +358,7 @@
                 <i class="fas fa-robot"></i>
             </div>
             <div>
-                <span>المساعد يكتب</span>
+                <span> ai يكتب</span>
                 <div class="typing-dots">
                     <div class="typing-dot"></div>
                     <div class="typing-dot"></div>
@@ -390,8 +390,7 @@
                 this.sendButton = document.getElementById('sendButton');
                 this.typingIndicator = document.getElementById('typingIndicator');
                 
-                // استخدم مفتاح API الخاص بك هنا
-                this.apiKey = 'AIzaSyBLcgg-3wUVoC-xVhJNsJBVqyCuGN-TpPk'; // ضع مفتاحك هنا
+                this.apiKey = 'AIzaSyBLcgg-3wUVoC-xVhJNsJBVqyCuGN-TpPk'; 
                 this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
                 
                 this.initializeEventListeners();
@@ -419,24 +418,21 @@
 
             async sendMessage() {
                 const message = this.messageInput.value.trim();
-                if (!message) return;
-
-                // التحقق من وجود مفتاح API
+                if (!message) return; 
                 if (!this.apiKey || this.apiKey === 'YOUR_API_KEY_HERE') {
                     this.addMessage('يرجى إدخال مفتاح API صحيح في الكود', 'ai', true);
                     return;
                 }
 
-                // إضافة رسالة المستخدم
                 this.addMessage(message, 'user');
                 this.messageInput.value = '';
                 this.adjustTextareaHeight();
                 
-                // إظهار مؤشر الكتابة
+                
                 this.showTypingIndicator();
                 
                 try {
-                    // إرسال الرسالة إلى Gemini API
+                    
                     const response = await this.callGeminiAPI(message);
                     this.hideTypingIndicator();
                     this.addMessage(response, 'ai');
@@ -539,7 +535,7 @@
                     messageContent.className += ' error-message';
                 }
                 
-                // تنسيق النص مع دعم الأسطر الجديدة
+                
                 messageContent.innerHTML = content.replace(/\n/g, '<br>');
                 
                 if (sender === 'user') {
@@ -572,12 +568,12 @@
             }
         }
 
-        // تشغيل التطبيق عند تحميل الصفحة
+        
         document.addEventListener('DOMContentLoaded', () => {
             new ChatApp();
         });
 
-        // إضافة تأثيرات إضافية
+        
         document.addEventListener('mousemove', (e) => {
             const cursor = document.querySelector('.cursor');
             if (!cursor) {
