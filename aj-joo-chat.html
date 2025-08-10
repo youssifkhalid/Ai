@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJ Joo - مساعد الذكاء الاصطناعي</title>
+    <title>Ai Joo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -766,8 +766,8 @@
                 <div class="app-logo">
                     <i class="fas fa-brain"></i>
                 </div>
-                <h1 class="app-title">AJ Joo</h1>
-                <p class="app-subtitle">مساعد الذكاء الاصطناعي المتقدم</p>
+                <h1 class="app-title">Ai Joo</h1>
+                <p class="app-subtitle">مساعدك الذكاء الاصطناعي</p>
                 <span class="version-badge">نسخة تجريبية v1.0</span>
                 <div class="developer-info">
                     <i class="fas fa-code"></i> طور بواسطة: المهندس يوسف خالد
@@ -853,7 +853,7 @@
                     <div class="welcome-icon">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h2>مرحباً بك في AJ Joo!</h2>
+                    <h2>مرحباً بك في Ai Joo!</h2>
                     <p>مساعدك الذكي المتقدم جاهز لمساعدتك في أي شيء تحتاجه</p>
                     <div class="quick-suggestions">
                         <button class="suggestion-btn" onclick="insertQuickMessage('ما هي أحدث التقنيات؟')">أحدث التقنيات</button>
@@ -869,7 +869,7 @@
                     <i class="fas fa-brain"></i>
                 </div>
                 <div class="typing-content">
-                    <span>AJ Joo يفكر ويكتب...</span>
+                    <span>Ai Joo يفكر ويكتب...</span>
                     <div class="typing-dots">
                         <div class="typing-dot"></div>
                         <div class="typing-dot"></div>
@@ -913,11 +913,10 @@
                 this.sendButton = document.getElementById('sendButton');
                 this.typingIndicator = document.getElementById('typingIndicator');
                 
-                // إعدادات التطبيق
+                
                 this.apiKey = 'AIzaSyBLcgg-3wUVoC-xVhJNsJBVqyCuGN-TpPk';
                 this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
                 
-                // إحصائيات
                 this.messageCount = 0;
                 this.sessionStartTime = Date.now();
                 this.settings = {
@@ -951,7 +950,7 @@
                     this.updateLastActivity();
                 });
 
-                // إضافة مستمعي الأحداث للوحة المفاتيح
+                
                 document.addEventListener('keydown', (e) => {
                     if (e.ctrlKey && e.key === 'k') {
                         e.preventDefault();
@@ -974,18 +973,17 @@
                     return;
                 }
 
-                // إضافة رسالة المستخدم
-                this.addMessage(message, 'user');
+                // إضافة رسالة المستخدم              this.addMessage(message, 'user');
                 this.messageInput.value = '';
                 this.adjustTextareaHeight();
                 this.updateMessageCount();
                 
-                // تشغيل صوت الإرسال
+                
                 if (this.settings.sound) {
                     this.playSound('send');
                 }
                 
-                // إظهار مؤشر الكتابة
+                
                 this.showTypingIndicator();
                 
                 try {
@@ -1119,7 +1117,7 @@
             }
 
             formatMessage(content) {
-                // تنسيق النص مع دعم الأسطر الجديدة والروابط
+                
                 return content
                     .replace(/\n/g, '<br>')
                     .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: var(--primary-color);">$1</a>')
@@ -1144,7 +1142,7 @@
                 }, 100);
             }
 
-            // مميزات إضافية
+            
             updateMessageCount() {
                 this.messageCount++;
                 document.getElementById('messageCount').textContent = this.messageCount;
@@ -1176,7 +1174,7 @@
             }
 
             playSound(type) {
-                // محاكاة تشغيل الأصوات
+                
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
                 const oscillator = audioContext.createOscillator();
                 const gainNode = audioContext.createGain();
@@ -1243,7 +1241,7 @@
             }
         }
 
-        // وظائف عامة
+
         function insertQuickMessage(message) {
             document.getElementById('messageInput').value = message;
             document.getElementById('messageInput').focus();
@@ -1257,8 +1255,8 @@
                         <div class="welcome-icon">
                             <i class="fas fa-robot"></i>
                         </div>
-                        <h2>مرحباً بك في AJ Joo!</h2>
-                        <p>مساعدك الذكي المتقدم جاهز لمساعدتك في أي شيء تحتاجه</p>
+                        <h2>مرحباً بك في Ai Joo!</h2>
+                        <p>مساعدك الذكي  جاهز لمساعدتك في أي شيء تحتاجه</p>
                         <div class="quick-suggestions">
                             <button class="suggestion-btn" onclick="insertQuickMessage('ما هي أحدث التقنيات؟')">أحدث التقنيات</button>
                             <button class="suggestion-btn" onclick="insertQuickMessage('اكتب لي قصة قصيرة')">اكتب قصة</button>
@@ -1357,7 +1355,7 @@
             alert('ميزة الرسائل الصوتية قريباً!');
         }
 
-        // تشغيل التطبيق
+        
         document.addEventListener('DOMContentLoaded', () => {
             window.ajjooChat = new AJJooChat();
         });
